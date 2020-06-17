@@ -36,7 +36,7 @@ main {
 
 .primary,
 .secondary,
-p {
+.header-contents p {
   text-align: center;
   justify-self: center;
 }
@@ -68,20 +68,52 @@ p {
   grid-template-areas: 
   "col1 col2 col3";
   overflow: hidden;
+  margin: 0px 30px 30px 40px;
+  padding: 0 20px 0 20px;
 }
 
+.card {
+  box-shadow: 2px 2px 2px 2px #888888;
+  margin: 10px 0 10px 0;
+  height: 45%;
+  width: 70%;
+}
+
+/*------COLUMNS OF CARD SECTION ------*/
 .col1 {
   grid-area: col1;
 }
 
 .col2 {
   grid-area: col2;
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+  justify-content: end;
 }
 
 .col3 {
   grid-area: col3;
 }
 
+/* -------COLUMN ONE--------*/
+.card.supervisor,
+.card.calc {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 100px;
+
+}
+
+.card.karma,
+.card.team {
+  flex-grow: 2;
+}
+
+/* display: flex;
+justify-content: flex-start; */
 
 
 .attribution { font-size: 11px; text-align: center; }
