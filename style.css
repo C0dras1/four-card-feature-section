@@ -1,4 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(234, 12%, 34%);
+}
 
+main {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 1fr 2.5fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  "header-section"
+  "card-section";
+  overflow: hidden;
+}
+
+/*-----HEADER SECTION---------*/
+.header-section {
+  grid-area: header-section;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-contents {
+  justify-content: space-evenly;
+  padding: 0 30%;
+}
+
+.primary,
+.secondary,
+p {
+  text-align: center;
+  justify-self: center;
+}
+
+.primary {
+  font-weight: 200;
+  font-size: 160%;
+}
+
+.secondary {
+  font-weight: 600;
+  font-size: 160%;
+  padding-bottom: 4px;
+}
+
+p {
+  text-overflow: clip;
+  font-weight: 200;
+  color: hsl(229, 6%, 66%);
+}
+
+
+/*-----CARD SECTION---------*/
+.card-section {
+  grid-area: card-section;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+  "col1 col2 col3";
+  overflow: hidden;
+}
+
+.col1 {
+  grid-area: col1;
+}
+
+.col2 {
+  grid-area: col2;
+}
+
+.col3 {
+  grid-area: col3;
+}
 
 
 
