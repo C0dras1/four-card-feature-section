@@ -126,3 +126,72 @@ main {
   float: right;
   margin-top: 30px;
 }
+
+@media only screen and (max-width: 375px) {
+  main {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header-section"
+    "card-section";
+    overflow: hidden;
+    grid-gap: 10px;
+    width: 90%;
+    margin: 0px 5%;
+  }
+  
+  .header-contents {
+    grid-area: header-section;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    line-height: 300%;
+  }
+  .primary,
+  .secondary {
+    font-size: 24px;
+    display: flex;
+    justify-self: stretch;
+    padding: 0 10px;
+  }
+  div p {
+    padding-top: 15px;
+  }
+  .card-section {
+    grid-area: card-section;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+      "lead"
+      "team"
+      "karma"
+      "calc";
+    grid-column-gap: 30px;
+    padding: 0 10px 40px 10px;
+  }
+  
+  .card {
+    width: 200%;
+  }
+  .card.lead {
+    grid-area: lead;
+    border-top: 4px solid hsl(180, 62%, 55%);
+  }
+  
+  .card.team {
+    grid-area: team;
+    border-top: 4px solid hsl(0, 78%, 62%);
+  }
+  
+  .card.karma {
+    grid-area: karma;
+    border-top: 4px solid hsl(34, 97%, 64%);
+  }
+  
+  .card.calc {
+    grid-area: calc;
+    border-top: 4px solid hsl(212, 86%, 64%);
+  }
+}
