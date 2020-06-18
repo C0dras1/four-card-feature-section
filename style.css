@@ -75,13 +75,10 @@ main {
     "lead team calc"
     "lead karma calc"
     ". karma .";
-  grid-gap: 30px;
-  padding: 0 200px 40px 200px;
+  grid-gap: 35px;
+  padding: 0 240px 40px 240px;
 }
 
-/* .card-section .card {
-  background-color: grey;
-} */
 .card {
   box-shadow: 
     5px 10px 10px hsla(229, 6%, 66%, 0.075),
@@ -93,6 +90,15 @@ main {
   font-size: 85%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  line-height: 160%;
+}
+
+.card h2 {
+  padding-bottom: 15px;
+}
+
+.card p {
+  color: hsl(229, 6%, 66%);
 }
 
 .card.lead {
@@ -113,4 +119,10 @@ main {
 .card.calc {
   grid-area: calc;
   border-top: 4px solid hsl(212, 86%, 64%);
+}
+
+.image-row img {
+  display: block;
+  float: right;
+  margin-top: 30px;
 }
