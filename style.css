@@ -19,6 +19,7 @@ main {
   "header-section"
   "card-section";
   overflow: hidden;
+  grid-gap: 10px;
 }
 
 /*-----HEADER SECTION---------*/
@@ -31,7 +32,7 @@ main {
 
 .header-contents {
   justify-content: space-evenly;
-  padding: 0 30%;
+  padding: 0 34%;
 }
 
 .primary,
@@ -43,19 +44,22 @@ main {
 
 .primary {
   font-weight: 200;
-  font-size: 160%;
+  font-size: 240%;
+  color: hsl(229, 6%, 66%);
+  margin-bottom: -5px;
 }
 
 .secondary {
   font-weight: 600;
-  font-size: 160%;
-  padding-bottom: 4px;
+  font-size: 235%;
+  padding-bottom: 10px;
 }
 
-p {
+.header-contents p {
   text-overflow: clip;
   font-weight: 200;
   color: hsl(229, 6%, 66%);
+  line-height: 130%;
 }
 
 
@@ -63,58 +67,50 @@ p {
 .card-section {
   grid-area: card-section;
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  height: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-areas: 
-  "col1 col2 col3";
-  overflow: hidden;
-  margin: 0px 30px 30px 40px;
-  padding: 0 20px 0 20px;
+    ". team ."
+    "lead team calc"
+    "lead karma calc"
+    ". karma .";
+  grid-gap: 30px;
+  padding: 0 200px 40px 200px;
 }
 
+/* .card-section .card {
+  background-color: grey;
+} */
 .card {
-  box-shadow: 2px 2px 2px 2px #888888;
-  margin: 10px 0 10px 0;
-  height: 45%;
-  width: 70%;
+  box-shadow: 
+    5px 10px 10px hsla(229, 6%, 66%, 0.075),
+    -5px 10px 10px hsla(229, 6%, 66%, 0.075),
+    0 2px 4px hsla(229, 6%, 66%, 0.253);
+  padding: 25px;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 85%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-/*------COLUMNS OF CARD SECTION ------*/
-.col1 {
-  grid-area: col1;
+.card.lead {
+  grid-area: lead;
+  border-top: 4px solid hsl(180, 62%, 55%);
 }
 
-.col2 {
-  grid-area: col2;
-  display: flex;
-  align-content: space-between;
-  flex-direction: column;
-  justify-content: end;
-}
-
-.col3 {
-  grid-area: col3;
-}
-
-/* -------COLUMN ONE--------*/
-.card.supervisor,
-.card.calc {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-top: 100px;
-
-}
-
-.card.karma,
 .card.team {
-  flex-grow: 2;
+  grid-area: team;
+  border-top: 4px solid hsl(0, 78%, 62%);
 }
 
-/* display: flex;
-justify-content: flex-start; */
+.card.karma {
+  grid-area: karma;
+  border-top: 4px solid hsl(34, 97%, 64%);
+}
 
-
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.card.calc {
+  grid-area: calc;
+  border-top: 4px solid hsl(212, 86%, 64%);
+}
